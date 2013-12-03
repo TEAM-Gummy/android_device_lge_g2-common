@@ -153,7 +153,7 @@ PRODUCT_PACKAGES += \
 	camera.g2
 
 PRODUCT_PACKAGES += \
-	audio_policy.default \
+	audio_policy.msm8974 \
 	audio.primary.msm8974 \
 	audio.a2dp.default \
 	audio.usb.default \
