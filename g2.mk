@@ -72,6 +72,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps.conf:system/etc/gps.conf
 
 PRODUCT_PACKAGES += \
+    GestureSettings
+
+PRODUCT_PACKAGES += \
     charger_res_images \
     charger
 
@@ -84,8 +87,6 @@ PRODUCT_PACKAGES += \
 
 # NFC packages
 PRODUCT_PACKAGES += \
-    nfc_nci.g2 \
-    NfcNci \
     Tag \
     com.android.nfc_extras
 
@@ -110,8 +111,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Audio Configuration
 PRODUCT_PROPERTY_OVERRIDES += \
-	persist.audio.handset.mic=digital \
-	persist.audio.fluence.mode=endfire \
+	persist.audio.fluence.voicecall=true \
+	persist.audio.dualmic.config=endfire \
 	af.resampler.quality=4
 
 
@@ -153,7 +154,7 @@ PRODUCT_PACKAGES += \
 	camera.g2
 
 PRODUCT_PACKAGES += \
-	audio_policy.msm8974 \
+	audio_policy.default \
 	audio.primary.msm8974 \
 	audio.a2dp.default \
 	audio.usb.default \
@@ -163,6 +164,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
         libmm-omxcore \
 	libdivxdrmdecrypt \
+	libOmxVdec \
+	libOmxVenc \
 	libOmxCore \
 	libstagefrighthw \
 	libc2dcolorconvert
