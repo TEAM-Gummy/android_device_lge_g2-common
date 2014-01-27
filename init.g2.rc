@@ -264,7 +264,7 @@ on post-fs-data
     write /sys/module/msm_thermal/core_control/enabled 1
     write /dev/cpuctl/apps/cpu.notify_on_migrate 1
 
-    write /sys/devices/virtual/input/lge_touch/touch_gesture 1
+    chown system system /sys/devices/virtual/input/lge_touch/touch_gesture
     chown root system /sys/devices/platform/tspdrv/nforce_timed
     chown root system /sys/devices/platform/kcal_ctrl.0/kcal
     chown root system /sys/devices/platform/kcal_ctrl.0/kcal_ctrl
@@ -357,9 +357,6 @@ service charger /charger
 # virtual sdcard daemon running as media_rw (1023)
 service sdcard /system/bin/sdcard /data/media /mnt/shell/emulated 1023 1023
     class late_start
-
-service thermald /system/bin/thermald
-    class main
 
 service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
     class main
